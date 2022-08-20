@@ -5,8 +5,8 @@ package com.karan.driver.web.remote;
 
 import org.openqa.selenium.WebDriver;
 
-import com.karan.driver.managerweb.remote.selenoid.SelenoidChromeManager;
-import com.karan.driver.managerweb.remote.selenoid.SelenoidFirefoxManager;
+import com.karan.driver.manager.web.remote.selenoid.SelenoidChromeManager;
+import com.karan.driver.manager.web.remote.selenoid.SelenoidFirefoxManager;
 import com.karan.enums.BrowserType;
 
 /**

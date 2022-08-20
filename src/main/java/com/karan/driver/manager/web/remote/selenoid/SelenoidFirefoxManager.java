@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.karan.driver.managerweb.remote.selenoid;
+package com.karan.driver.manager.web.remote.selenoid;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
