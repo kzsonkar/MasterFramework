@@ -4,7 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
-import com.karan.config.ConfigFactory;
+import com.karan.config.factory.ConfigFactory;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 

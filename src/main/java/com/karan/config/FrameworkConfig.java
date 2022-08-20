@@ -3,13 +3,15 @@
  */
 package com.karan.config;
 
+import java.net.URL;
+
 import org.aeonbits.owner.Config;
 
+import com.karan.config.converters.StringToBrowserTypeConverter;
+import com.karan.config.converters.StringToURLConverter;
 import com.karan.enums.BrowserRemoteModeType;
 import com.karan.enums.BrowserType;
 import com.karan.enums.RunModeBrowserType;
-
-import converters.StringToBrowserTypeConverter;
 
 /**
  * @author karansonkar
@@ -33,5 +35,13 @@ public interface FrameworkConfig extends Config {
 	
 	@Key("browserRemoteMode")
 	BrowserRemoteModeType browserRemoteMode();
+	
+	@Key("seleniumGridURL")
+	@ConverterClass(StringToURLConverter.class)
+	URL seleniumGridURL();
+	
+	@Key("selenoidURL")
+	@ConverterClass(StringToURLConverter.class)
+	URL selenoidURL();
 
 }
