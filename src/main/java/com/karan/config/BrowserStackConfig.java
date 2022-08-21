@@ -13,15 +13,19 @@ import com.karan.config.converters.StringToURLConverter;
  * @author karansonkar
  *
  */
+@Config.LoadPolicy(Config.LoadType.MERGE)
+@Config.Sources({
+	"file:${user.dir}/src/test/resources/browser-stack.properties"
+})
 public interface BrowserStackConfig extends Config{
 	
-	@Key("username")
+	@Key("userName")
 	String userName();
 	
 	@Key("key")
 	String key();
 	
-	@DefaultValue("https://${userName}:$key@hub-cloud.browserstack.com/wd/hub")
+	@DefaultValue("https://${userName}:${key}@hub-cloud.browserstack.com/wd/hub")
 	@ConverterClass(StringToURLConverter.class)
 	URL browserStackURL();
 

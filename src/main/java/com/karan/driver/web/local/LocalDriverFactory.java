@@ -1,5 +1,9 @@
 package com.karan.driver.web.local;
 
+import java.util.EnumMap;
+import java.util.Map;
+import java.util.function.Supplier;
+
 import org.openqa.selenium.WebDriver;
 
 import com.karan.driver.manager.web.local.ChromeManager;
@@ -8,17 +12,18 @@ import com.karan.enums.BrowserType;
 
 public final class LocalDriverFactory {
 
-	static WebDriver driver = null;
-
 	private LocalDriverFactory() {
 	}
 
-	public static WebDriver getDriver(BrowserType browserType) {
-		return isBrowserChrome(browserType) ? ChromeManager.getDriver() : FirefoxManager.getDriver();
+	private static final Map<BrowserType, Supplier<WebDriver>> MAP = new EnumMap<>(BrowserType.class);
+
+	static {
+		MAP.put(BrowserType.CHROME, ChromeManager::getDriver);
+		MAP.put(BrowserType.FIREFOX, FirefoxManager::getDriver);
 	}
 
-	private static boolean isBrowserChrome(BrowserType browserType) {
-		return browserType == BrowserType.CHROME;
+	public static WebDriver getDriver(BrowserType browserType) {
+		return MAP.get(browserType).get();
 	}
 
 }
