@@ -16,8 +16,8 @@ import com.karan.enums.BrowserRemoteModeType;
 public class StringToRemoteModeBrowserTypeConverter implements Converter<BrowserRemoteModeType> {
 
 	@Override
-	public BrowserRemoteModeType convert(Method method, String remoteMode) {
-		return BrowserRemoteModeType.valueOf(remoteMode.toUpperCase());
+	public BrowserRemoteModeType convert(Method method, String browserRemoteModeType) {
+		return BrowserRemoteModeType.valueOf(browserRemoteModeType.toUpperCase());
 	}
 
 }

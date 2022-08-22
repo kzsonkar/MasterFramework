@@ -3,12 +3,12 @@ package com.karan.tests;
 
 import org.testng.annotations.Test;
 
-import com.karan.config.factory.BrowserStackConfigFactory;
+import com.karan.driver.Driver;
 
 
 public class DemoTest {
   @Test
   public void f() {
-	  System.out.println(BrowserStackConfigFactory.getConfig().browserStackURL());
+	  Driver.initDriver();
   }
 }

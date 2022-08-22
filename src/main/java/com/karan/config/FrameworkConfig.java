@@ -8,6 +8,7 @@ import java.net.URL;
 import org.aeonbits.owner.Config;
 
 import com.karan.config.converters.StringToBrowserTypeConverter;
+import com.karan.config.converters.StringToRemoteModeBrowserTypeConverter;
 import com.karan.config.converters.StringToURLConverter;
 import com.karan.enums.BrowserRemoteModeType;
 import com.karan.enums.BrowserType;
@@ -34,6 +35,7 @@ public interface FrameworkConfig extends Config {
 	RunModeBrowserType browserRunMode();
 	
 	@Key("browserRemoteMode")
+	@ConverterClass(StringToRemoteModeBrowserTypeConverter.class)
 	BrowserRemoteModeType browserRemoteMode();
 	
 	@Key("seleniumGridURL")
