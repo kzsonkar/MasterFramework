@@ -9,6 +9,6 @@ import com.karan.driver.Driver;
 public class DemoTest {
   @Test
   public void f() {
-	  Driver.initDriver();
+	  Driver.initDriverForWeb();
   }
 }

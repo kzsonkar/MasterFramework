@@ -6,7 +6,8 @@ package com.karan.driver;
 import org.openqa.selenium.WebDriver;
 
 import com.karan.config.factory.ConfigFactory;
-import com.karan.driver.web.remote.RemoteDriverFactory;
+import com.karan.driver.entity.DriverData;
+import com.karan.driver.factory.DriverFactory;
 
 /**
  * @author karansonkar
@@ -19,8 +20,16 @@ public class Driver {
 	private Driver() {
 	}
 
-	public static void initDriver() {
-		driver = RemoteDriverFactory.getDriver(ConfigFactory.getConfig().browserRemoteMode(), ConfigFactory.getConfig().browser());
+	public static void initDriverForWeb() {
+		DriverData driverData = DriverData.builder()
+			.browserType(ConfigFactory.getConfig().browser())
+			.browserRemoteModeType(ConfigFactory.getConfig().browserRemoteMode())
+			.runModeBrowserType(ConfigFactory.getConfig().browserRunMode()).build();
+		driver = DriverFactory.getDriverForWeb(driverData);
+	}
+	
+	public static void initDriverForMobile() {
+
 	}
 
 	public static void quitDriver() {

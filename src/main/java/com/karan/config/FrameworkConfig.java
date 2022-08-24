@@ -9,6 +9,7 @@ import org.aeonbits.owner.Config;
 
 import com.karan.config.converters.StringToBrowserTypeConverter;
 import com.karan.config.converters.StringToRemoteModeBrowserTypeConverter;
+import com.karan.config.converters.StringToRunModeBrowserTypeConverter;
 import com.karan.config.converters.StringToURLConverter;
 import com.karan.enums.BrowserRemoteModeType;
 import com.karan.enums.BrowserType;
@@ -32,6 +33,7 @@ public interface FrameworkConfig extends Config {
 	BrowserType browser();
 	
 	@Key("runModeBrowser")
+	@ConverterClass(StringToRunModeBrowserTypeConverter.class)
 	RunModeBrowserType browserRunMode();
 	
 	@Key("browserRemoteMode")
