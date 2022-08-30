@@ -13,7 +13,7 @@ import com.karan.config.converters.StringToRunModeBrowserTypeConverter;
 import com.karan.config.converters.StringToURLConverter;
 import com.karan.enums.BrowserRemoteModeType;
 import com.karan.enums.BrowserType;
-import com.karan.enums.RunModeBrowserType;
+import com.karan.enums.RunModeType;
 
 /**
  * @author karansonkar
@@ -34,7 +34,7 @@ public interface FrameworkConfig extends Config {
 	
 	@Key("runModeBrowser")
 	@ConverterClass(StringToRunModeBrowserTypeConverter.class)
-	RunModeBrowserType browserRunMode();
+	RunModeType browserRunMode();
 	
 	@Key("browserRemoteMode")
 	@ConverterClass(StringToRemoteModeBrowserTypeConverter.class)

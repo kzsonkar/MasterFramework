@@ -7,17 +7,17 @@ import java.lang.reflect.Method;
 
 import org.aeonbits.owner.Converter;
 
-import com.karan.enums.RunModeBrowserType;
+import com.karan.enums.RunModeType;
 
 /**
  * @author karansonkar
  *
  */
-public class StringToRunModeBrowserTypeConverter implements Converter<RunModeBrowserType> {
+public class StringToRunModeBrowserTypeConverter implements Converter<RunModeType> {
 
 	@Override
-	public RunModeBrowserType convert(Method method, String runMode) {
-		return RunModeBrowserType.valueOf(runMode.toUpperCase());
+	public RunModeType convert(Method method, String runMode) {
+		return RunModeType.valueOf(runMode.toUpperCase());
 	}
 
 }

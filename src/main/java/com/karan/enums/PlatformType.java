@@ -7,8 +7,8 @@ package com.karan.enums;
  * @author karansonkar
  *
  */
-public enum RunModeBrowserType {
+public enum PlatformType {
 	
-	LOCAL,REMOTE;
+	WEB, MOBILE;
 
 }

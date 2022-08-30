@@ -3,10 +3,12 @@
  */
 package com.karan.driver;
 
+import java.util.Objects;
+
 import org.openqa.selenium.WebDriver;
 
 import com.karan.config.factory.ConfigFactory;
-import com.karan.driver.entity.DriverData;
+import com.karan.driver.entity.WebDriverData;
 import com.karan.driver.factory.DriverFactory;
 
 /**
@@ -15,25 +17,28 @@ import com.karan.driver.factory.DriverFactory;
  */
 public class Driver {
 
-	static WebDriver driver = null;
-
 	private Driver() {
 	}
 
 	public static void initDriverForWeb() {
-		DriverData driverData = DriverData.builder()
-			.browserType(ConfigFactory.getConfig().browser())
-			.browserRemoteModeType(ConfigFactory.getConfig().browserRemoteMode())
-			.runModeBrowserType(ConfigFactory.getConfig().browserRunMode()).build();
-		driver = DriverFactory.getDriverForWeb(driverData);
+		if (Objects.isNull(DriverManager.getDriver())) {
+			WebDriverData driverData = new WebDriverData(ConfigFactory.getConfig().browser(),
+					ConfigFactory.getConfig().browserRemoteMode());
+			WebDriver driver = DriverFactory.getDriverForWeb(ConfigFactory.getConfig().browserRunMode())
+					.getDriver(driverData);
+			DriverManager.setDriver(driver);
+		}
 	}
-	
+
 	public static void initDriverForMobile() {
 
 	}
 
 	public static void quitDriver() {
-		driver.quit();
+		if (Objects.nonNull(DriverManager.getDriver())) {
+			DriverManager.getDriver().quit();
+			DriverManager.unload();
+		}
 	}
 
 }

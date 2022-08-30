@@ -3,12 +3,16 @@
  */
 package com.karan.driver.factory;
 
+import java.util.EnumMap;
+import java.util.Map;
+import java.util.function.Supplier;
+
 import org.openqa.selenium.WebDriver;
 
-import com.karan.driver.entity.DriverData;
-import com.karan.driver.web.local.LocalDriverFactory;
-import com.karan.driver.web.remote.RemoteDriverFactory;
-import com.karan.enums.RunModeBrowserType;
+import com.karan.driver.IWebDriver;
+import com.karan.driver.LocalWebDriverImpl;
+import com.karan.driver.RemoteWebDriverImpl;
+import com.karan.enums.RunModeType;
 
 /**
  * @author karansonkar
@@ -20,18 +24,20 @@ public final class DriverFactory {
 	 * 
 	 */
 	private DriverFactory() {
-		// TODO Auto-generated constructor stub
 	}
 
-	public static WebDriver getDriverForWeb(DriverData driverData) {
-		if (driverData.getRunModeBrowserType() == RunModeBrowserType.LOCAL) {
-			return LocalDriverFactory.getDriver(driverData.getBrowserType());
-		} else {
-			return RemoteDriverFactory.getDriver(driverData.getBrowserRemoteModeType(), driverData.getBrowserType());
-		}
+	private static final Map<RunModeType, Supplier<IWebDriver>> WEB = new EnumMap<>(RunModeType.class);
+	
+	static {
+		WEB.put(RunModeType.LOCAL, ()-> new LocalWebDriverImpl());
+		WEB.put(RunModeType.REMOTE, ()-> new RemoteWebDriverImpl());
 	}
 	
-	public static WebDriver getDriverForMobile(DriverData driverData) {
+	public static IWebDriver getDriverForWeb(RunModeType runModeType) {
+		return WEB.get(runModeType).get();
+	}
+
+	public static WebDriver getDriverForMobile(RunModeType runModeType) {
 		return null;
 	}
 
