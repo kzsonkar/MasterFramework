@@ -19,7 +19,11 @@ public class Driver {
 
 	private Driver() {
 	}
-
+	
+	public static void loadUrl() {
+		DriverManager.getDriver().get(ConfigFactory.getConfig().webUrl());
+	}
+	
 	public static void initDriverForWeb() {
 		if (Objects.isNull(DriverManager.getDriver())) {
 			WebDriverData driverData = new WebDriverData(ConfigFactory.getConfig().browser(),
@@ -27,12 +31,13 @@ public class Driver {
 			WebDriver driver = DriverFactory.getDriverForWeb(ConfigFactory.getConfig().browserRunMode())
 					.getDriver(driverData);
 			DriverManager.setDriver(driver);
+			loadUrl();
 		}
 	}
 
 	public static void initDriverForMobile() {
-
-	}
+   // TODO document why this method is empty
+ }
 
 	public static void quitDriver() {
 		if (Objects.nonNull(DriverManager.getDriver())) {
