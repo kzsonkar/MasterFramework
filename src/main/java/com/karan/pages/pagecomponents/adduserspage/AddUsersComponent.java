@@ -3,8 +3,11 @@
  */
 package com.karan.pages.pagecomponents.adduserspage;
 
+import java.util.function.BiPredicate;
+
 import org.openqa.selenium.By;
 
+import com.karan.driver.DriverManager;
 import com.karan.fixtures.addusers.entity.UserData;
 import com.karan.utils.PageActionsHelper;
 
@@ -24,6 +27,8 @@ public class AddUsersComponent {
 			.xpath("//label[text()='Password']/parent::div//following-sibling::div//input");
 	private static final By CONFIRM_PASSWORD_TEXT_BOX = By
 			.xpath("//label[text()='Confirm Password']/parent::div//following-sibling::div//input");
+	private static final By ERROR_MESSAGE_FOR_EMPLOYEE_NAME = By
+			.xpath("//span[@class='oxd-text oxd-text--span oxd-input-field-error-message oxd-input-group__message']");
 
 	public AddUsersComponent setUserRoleDropDown(String option) {
 		PageActionsHelper.select(USER_ROLE_DROP_DOWN, option);
@@ -54,14 +59,21 @@ public class AddUsersComponent {
 		PageActionsHelper.waitAndSendKeys(CONFIRM_PASSWORD_TEXT_BOX, confirmPassword);
 		return this;
 	}
-	
-	public void fillDetails(UserData userData){
-		setUserRoleDropDown(userData.getUserRole())
-		.setEmpNameTextBox(userData.getEmployeeName())
-		.setStatusDropDown(userData.getStatus())
-		.setUserNameTextBox(userData.getUserName())
-		.setPasswordTextBox(userData.getPassword())
-		.setConfirmPasswordTextBox(userData.getPassword());
+
+	public boolean isErrorDisplayedForEmployeeName() {
+		return DriverManager.getDriver().findElement(ERROR_MESSAGE_FOR_EMPLOYEE_NAME).getText()
+				.equalsIgnoreCase("Required");
+	}
+
+	public boolean fillDetails(UserData userData, BiPredicate<UserData, AddUsersComponent> predicate) {
+		/* setUserRoleDropDown(userData.getUserRole()).setEmpNameTextBox(userData.getEmployeeName())
+				.setStatusDropDown(userData.getStatus()).setUserNameTextBox(userData.getUserName())
+				.setPasswordTextBox(userData.getPassword()).setConfirmPasswordTextBox(userData.getPassword()); */
+		return predicate.test(userData, this);
+	}
+
+	public boolean isSuccessMessageDisplayed() {
+		return true;
 	}
 
 }

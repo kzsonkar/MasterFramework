@@ -1,28 +1,101 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-09-03T15:17:29 IST" name="Default suite" finished-at="2022-09-03T15:17:53 IST" duration-ms="23650">
+  <suite started-at="2022-09-03T16:38:46 IST" name="Default suite" finished-at="2022-09-03T16:39:07 IST" duration-ms="21050">
     <groups>
     </groups>
-    <test started-at="2022-09-03T15:17:29 IST" name="Default test" finished-at="2022-09-03T15:17:53 IST" duration-ms="23650">
+    <test started-at="2022-09-03T16:38:46 IST" name="Default test" finished-at="2022-09-03T16:39:07 IST" duration-ms="21050">
       <class name="com.karan.tests.AddUsersTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.karan.tests.AddUsersTest@4988d8b8]" started-at="2022-09-03T15:17:29 IST" name="setUp" finished-at="2022-09-03T15:17:35 IST" duration-ms="5805" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.karan.tests.AddUsersTest@4961f6af]" started-at="2022-09-03T16:38:46 IST" name="setUp" finished-at="2022-09-03T16:38:53 IST" duration-ms="7278" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="testAddusers(com.karan.fixtures.addusers.entity.UserData)[pri:0, instance:com.karan.tests.AddUsersTest@4988d8b8]" started-at="2022-09-03T15:17:35 IST" name="testAddusers" data-provider="supplySeqData" finished-at="2022-09-03T15:17:53 IST" duration-ms="17685" status="PASS">
+        <test-method signature="testAddusers(com.karan.fixtures.addusers.entity.UserData,java.util.function.BiPredicate)[pri:0, instance:com.karan.tests.AddUsersTest@4961f6af]" started-at="2022-09-03T16:38:53 IST" name="testAddusers" data-provider="getData" finished-at="2022-09-03T16:39:07 IST" duration-ms="13633" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA[UserData(userRole=Admin, employeeName=empName, userName=userName, status=Enabled, password=password)]]>
+                <![CDATA[UserData(userRole=null, employeeName=abcedf1234, userName=null, status=null, password=null)]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[com.karan.tests.AddUsersTest$$Lambda$222/0x0000000800d26908@6a84bc2a]]>
               </value>
             </param>
           </params>
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//span[@class='oxd-text oxd-text--span oxd-input-field-error-message oxd-input-group__message']"}
+  (Session info: chrome=105.0.5195.102)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'KaranSonkars-MacBook-Pro.local', ip: 'fe80:0:0:0:c56:360b:33ee:101b%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '12.5.1', java.version: '18.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 105.0.5195.102, chrome: {chromedriverVersion: 105.0.5195.52 (412c95e51883..., userDataDir: /var/folders/86/420cjzjn6fs...}, goog:chromeOptions: {debuggerAddress: localhost:57851}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: f2a32033b42f6a5dba9a73c36a4fcf0f
+*** Element info: {Using=xpath, value=//span[@class='oxd-text oxd-text--span oxd-input-field-error-message oxd-input-group__message']}]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//span[@class='oxd-text oxd-text--span oxd-input-field-error-message oxd-input-group__message']"}
+  (Session info: chrome=105.0.5195.102)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'KaranSonkars-MacBook-Pro.local', ip: 'fe80:0:0:0:c56:360b:33ee:101b%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '12.5.1', java.version: '18.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 105.0.5195.102, chrome: {chromedriverVersion: 105.0.5195.52 (412c95e51883..., userDataDir: /var/folders/86/420cjzjn6fs...}, goog:chromeOptions: {debuggerAddress: localhost:57851}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: f2a32033b42f6a5dba9a73c36a4fcf0f
+*** Element info: {Using=xpath, value=//span[@class='oxd-text oxd-text--span oxd-input-field-error-message oxd-input-group__message']}
+at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+at com.karan.pages.pagecomponents.adduserspage.AddUsersComponent.isErrorDisplayedForEmployeeName(AddUsersComponent.java:64)
+at com.karan.tests.AddUsersTest.lambda$1(AddUsersTest.java:34)
+at com.karan.pages.pagecomponents.adduserspage.AddUsersComponent.fillDetails(AddUsersComponent.java:72)
+at com.karan.tests.AddUsersTest.testAddusers(AddUsersTest.java:23)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testAddusers -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.karan.tests.AddUsersTest@4988d8b8]" started-at="2022-09-03T15:17:53 IST" name="tearDown" finished-at="2022-09-03T15:17:53 IST" duration-ms="83" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.karan.tests.AddUsersTest@4961f6af]" started-at="2022-09-03T16:39:07 IST" name="tearDown" finished-at="2022-09-03T16:39:07 IST" duration-ms="76" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
