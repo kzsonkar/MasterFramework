@@ -26,7 +26,8 @@ public class HomePage {
 	public SystemUserPage navigateToAddUsersPage() {
 		topMenuComponent.clickMenuItem(MenuType.ADMIN)
 		.clickSubMenuItem(SubMenuType.USER_MANAGEMENT)
-		.clickSubMenuItem(SubMenuType.USERS);
+		.clickSubMenuItem(SubMenuType.USERS)
+		.clickSubMenuItem(SubMenuType.ADD);
 		return new SystemUserPage();
 	}
 

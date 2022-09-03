@@ -9,8 +9,9 @@ package com.karan.pages.enums.topmenucomponents;
  */
 public enum SubMenuType {
 	
-	USER_MANAGEMENT("User_Managerment"),
-	USERS("Users");
+	USER_MANAGEMENT("User Management "),
+	USERS("Users"),
+	ADD(" Add ");
 	
 	private final String name;
 

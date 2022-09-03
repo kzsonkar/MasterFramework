@@ -15,8 +15,8 @@ import com.karan.utils.PageActionsHelper;
  */
 public class TopMenuComponent {
 	
-	private static final String MENU = "//b[text()='%s']/parent::a";
-	private static final String SUB_MENU = "//a[text()='%s']";
+	private static final String MENU = "//*[text()='%s']/parent::a";
+	private static final String SUB_MENU = "//*[text()='%s']";
 	
 	public TopMenuComponent clickMenuItem(MenuType menuType) {
 		String xpath = String.format(MENU, menuType.getName());

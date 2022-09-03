@@ -11,9 +11,10 @@ import io.github.sskorol.core.DataSupplier;
 
 public class AddUsersTest extends WebBase {
 	@Test(dataProvider = "getData")
-	public void testAddusers(UserData userData) {
+	public void testAddusers(UserData userData) throws InterruptedException {
 		// test
-		new LoginPage().loginToApplication("Admin", "admin123").navigateToAddUsersPage().getAddUsersComponent();
+		new LoginPage().loginToApplication("Admin", "admin123").navigateToAddUsersPage().getAddUsersComponent().fillDetails(userData);
+		Thread.sleep(5000);
 	}
 	
 	@DataSupplier
