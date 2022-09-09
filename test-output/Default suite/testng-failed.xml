@@ -5,7 +5,7 @@
     <classes>
       <class name="com.karan.tests.AddUsersTest">
         <methods>
-          <include name="testAddusers" invocation-numbers="0"/>
+          <include name="testAddusers" invocation-numbers="1"/>
           <include name="tearDown"/>
           <include name="setUp"/>
         </methods>

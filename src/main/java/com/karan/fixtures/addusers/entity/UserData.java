@@ -26,5 +26,6 @@ public class UserData {
 	private String userName;
 	private String status;
 	private String password;
+	private String message;
 
 }
