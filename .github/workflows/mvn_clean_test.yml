@@ -23,6 +23,6 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Set up Chrome
-      uses: actions/setup-chrome@v3
+      uses: browser-actions/setup-chrome@latest
     - name: Mvn Test
       run: mvn clean test
