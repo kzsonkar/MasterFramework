@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="2" passed="1" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-09-09T22:59:03 IST" name="Default suite" finished-at="2022-09-09T22:59:51 IST" duration-ms="48018">
+  <suite started-at="2022-10-02T17:30:17 IST" name="Suite" finished-at="2022-10-02T17:30:58 IST" duration-ms="41151">
     <groups>
     </groups>
-    <test started-at="2022-09-09T22:59:03 IST" name="Default test" finished-at="2022-09-09T22:59:51 IST" duration-ms="48018">
+    <test started-at="2022-10-02T17:30:17 IST" name="Test" finished-at="2022-10-02T17:30:58 IST" duration-ms="41151">
       <class name="com.karan.tests.AddUsersTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.karan.tests.AddUsersTest@bccb269]" started-at="2022-09-09T22:59:03 IST" name="setUp" finished-at="2022-09-09T22:59:14 IST" duration-ms="11564" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.karan.tests.AddUsersTest@6913c1fb]" started-at="2022-10-02T17:30:17 IST" name="setUp" finished-at="2022-10-02T17:30:32 IST" duration-ms="14644" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="testAddusers(com.karan.predicatefactory.enums.AddUsersScenarioType)[pri:0, instance:com.karan.tests.AddUsersTest@bccb269]" started-at="2022-09-09T22:59:14 IST" name="testAddusers" data-provider="supplySeqData" finished-at="2022-09-09T22:59:33 IST" duration-ms="18697" status="PASS">
+        <test-method signature="testAddusers(com.karan.predicatefactory.enums.AddUsersScenarioType)[pri:0, instance:com.karan.tests.AddUsersTest@6913c1fb]" started-at="2022-10-02T17:30:32 IST" name="testAddusers" data-provider="getData" finished-at="2022-10-02T17:30:49 IST" duration-ms="17258" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -22,15 +22,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testAddusers -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.karan.tests.AddUsersTest@bccb269]" started-at="2022-09-09T22:59:33 IST" name="tearDown" finished-at="2022-09-09T22:59:33 IST" duration-ms="85" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.karan.tests.AddUsersTest@6913c1fb]" started-at="2022-10-02T17:30:49 IST" name="tearDown" finished-at="2022-10-02T17:30:49 IST" duration-ms="83" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.karan.tests.AddUsersTest@bccb269]" started-at="2022-09-09T22:59:33 IST" name="setUp" finished-at="2022-09-09T22:59:51 IST" duration-ms="17481" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.karan.tests.AddUsersTest@6913c1fb]" started-at="2022-10-02T17:30:49 IST" name="setUp" finished-at="2022-10-02T17:30:58 IST" duration-ms="9009" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="testAddusers(com.karan.predicatefactory.enums.AddUsersScenarioType)[pri:0, instance:com.karan.tests.AddUsersTest@bccb269]" started-at="2022-09-09T22:59:51 IST" name="testAddusers" data-provider="supplySeqData" finished-at="2022-09-09T22:59:51 IST" duration-ms="3" status="FAIL">
+        <test-method signature="testAddusers(com.karan.predicatefactory.enums.AddUsersScenarioType)[pri:0, instance:com.karan.tests.AddUsersTest@6913c1fb]" started-at="2022-10-02T17:30:58 IST" name="testAddusers" data-provider="getData" finished-at="2022-10-02T17:30:58 IST" duration-ms="4" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -42,13 +42,13 @@
             <message>
               <![CDATA[Session ID is null. Using WebDriver after calling quit()?
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'KaranSonkars-MacBook-Pro.local', ip: 'fe80:0:0:0:c56:360b:33ee:101b%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '12.5.1', java.version: '18.0.2'
+System info: host: 'KaranSonkars-MacBook-Pro.local', ip: 'fe80:0:0:0:1cf1:2c3e:8a85:847b%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '12.5.1', java.version: '18.0.2'
 Driver info: driver.version: RemoteWebDriver]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.openqa.selenium.NoSuchSessionException: Session ID is null. Using WebDriver after calling quit()?
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'KaranSonkars-MacBook-Pro.local', ip: 'fe80:0:0:0:c56:360b:33ee:101b%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '12.5.1', java.version: '18.0.2'
+System info: host: 'KaranSonkars-MacBook-Pro.local', ip: 'fe80:0:0:0:1cf1:2c3e:8a85:847b%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '12.5.1', java.version: '18.0.2'
 Driver info: driver.version: RemoteWebDriver
 at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:125)
 at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
@@ -96,11 +96,11 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testAddusers -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.karan.tests.AddUsersTest@bccb269]" started-at="2022-09-09T22:59:51 IST" name="tearDown" finished-at="2022-09-09T22:59:51 IST" duration-ms="74" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.karan.tests.AddUsersTest@6913c1fb]" started-at="2022-10-02T17:30:58 IST" name="tearDown" finished-at="2022-10-02T17:30:58 IST" duration-ms="74" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- com.karan.tests.AddUsersTest -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
 </testng-results>

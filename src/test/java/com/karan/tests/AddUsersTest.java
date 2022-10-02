@@ -1,15 +1,15 @@
 package com.karan.tests;
 
-import java.util.stream.Stream;
+//import java.util.stream.Stream;
 
 import org.assertj.core.api.Assertions;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.karan.pages.LoginPage;
 import com.karan.predicatefactory.enums.AddUsersScenarioType;
 
 import br.com.six2six.fixturefactory.loader.FixtureFactoryLoader;
-import io.github.sskorol.core.DataSupplier;
 
 public class AddUsersTest extends WebBase {
 
@@ -24,9 +24,10 @@ public class AddUsersTest extends WebBase {
 		Thread.sleep(5000);
 	}
 
-	@DataSupplier()
-	public Stream<AddUsersScenarioType> getData() {
+	@DataProvider(parallel = false)
+	public Object[] getData() {
 		FixtureFactoryLoader.loadTemplates("com.karan.fixtures");
-		return Stream.of(AddUsersScenarioType.values());
+		return new Object[] {AddUsersScenarioType.VALID, AddUsersScenarioType.JUST_EMPLOYEE_NAME};
+		//return Stream.of(AddUsersScenarioType.values());
 	}
 }
